@@ -1,0 +1,73 @@
+@prefix : <https://w3id.org/situannotate-dl#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix terms: <http://purl.org/dc/terms/> .
+@prefix fschema: <https://w3id.org/framester/schema/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix situannotate: <https://w3id.org/situannotate#> .
+
+@base <https://w3id.org/situannotate-dl#> .
+
+<https://w3id.org/situannotate-dl#> rdf:type owl:Ontology ;
+                                 dc:creator "Delfina Sol Martinez Pandiani" ;
+                                 rdfs:comment "This is the SituAnnotate ontology module for representing distributional linguistics (DL) annotation situations. It imports and specializes the core situAnnotate ontology." ;
+                                 owl:imports <https://w3id.org/situannotate#> .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  <https://w3id.org/situannotate-dl#hasCollocateTypedBy
+:hasCollocateTypedBy rdf:type owl:ObjectProperty ;
+                          rdfs:subPropertyOf situannotate:hasAnnotationTypedBy ;
+                          owl:inverseOf :typesCollocateOf ;
+                          rdfs:comment "Relates a concept with a concept that types one of its collocations." ;
+                          rdfs:label "has collocate typed by" .
+
+
+###  <https://w3id.org/situannotate-dl#typesCollocateOf
+:typesCollocateOf rdf:type owl:ObjectProperty ;
+                       rdfs:subPropertyOf situannotate:typesAnnotationOf ;
+                       rdfs:domain situannotate:Concept ;
+                       rdfs:range situannotate:Concept ;
+                       rdfs:comment "Relates a concept with another concept that it collocates with." ;
+                       rdfs:label "types collocate of" .
+
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  <https://w3id.org/situannotate-dl#CollocationAnnotation
+:CollocationAnnotation rdf:type owl:Class ;
+                            rdfs:subClassOf situannotate:Annotation ;
+                            rdfs:comment "An annotation referring to a collocation." ;
+                            rdfs:label "Collocation Annotation" .
+
+
+###  <https://w3id.org/situannotate-dl#CollocationAnnotationDescription
+:CollocationAnnotationDescription rdf:type owl:Class ;
+                                       rdfs:subClassOf situannotate:AnnotationDescription ;
+                                       rdfs:comment "A description of a collocation annotation, satisfied by a CollocationAnnotationSituation." ;
+                                       rdfs:label "Collocation Annotation Description" .
+
+
+###  <https://w3id.org/situannotate-dl#CollocationRole
+:CollocationRole rdf:type owl:Class ;
+                      rdfs:subClassOf situannotate:AnnotationRole ;
+                      rdfs:comment "A role associated with collocation annotations." ;
+                      rdfs:label "Collocation Role" .
+
+
+###  <https://w3id.org/situannotate-dl#CollocationSituation
+:CollocationSituation rdf:type owl:Class ;
+                           rdfs:subClassOf situannotate:AnnotationSituation ;
+                           rdfs:comment "A situation in which collocation annotation occurs." ;
+                           rdfs:label "Collocation Situation" .
