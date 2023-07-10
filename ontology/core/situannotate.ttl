@@ -1,4 +1,4 @@
-@prefix : <https://w3id.org/situannotate/ontology/core/> .
+@prefix : <https://w3id.org/situannotate#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dul: <http://www.ontologydesignpatterns.org/ont/dul/dul.owl#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
@@ -11,14 +11,12 @@
 @prefix fschema: <https://w3id.org/framester/schema/> .
 @prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
 
-@base <https://w3id.org/situannotate/ontology/core/> .
+@base <https://w3id.org/situannotate#> .
 
-<https://w3id.org/situannotate/ontology/core> rdf:type owl:Ontology ;
-                                 owl:versionIRI <https://w3id.org/situannotate/ontology/core/1.0/> ;
+<https://w3id.org/situannotate#> rdf:type owl:Ontology ;
                                  dc:creator "Delfina Sol Martinez Pandiani" ;
                                  dc:collaborator "Valentina Presutti" ;
                                  rdfs:comment "This is the SituAnnotate ontology, an ontological module for Annotation Situations. It is based on using the ontology design pattern Descriptions and Situations (DnS) in a modular way. It allows the representation of any annotation situation in which some meaning is assigned, through linguistic (lexical) units to some annotated entity (an image, a concept, a document, etc.). It allows the representation of the situation within which an annotation is done as well as all related data including the annotatated entity, the annotator, the time and place of the annotation, the remuneration scheme underlying the annotation task, and the roles that the annotation may play in the context of the situation. Each annotation situation can be related to multiple annotations, and it satisfies a description which gives meaning to annotation roles. The ontology is furthermore aligned to dul - Dolce Ultralight foundational Ontology." ;
-                                 owl:versionInfo "This is the first version of SituAnnotate ontology." .
 
 #################################################################
 #    Annotation properties
@@ -94,7 +92,7 @@ dul:usesConcept rdf:type owl:ObjectProperty ;
                 owl:equivalentProperty :usesConcept .
 
 
-###  https://https://w3id.org/situannotate/ontology/core/aboutAnnotatedEntity
+###  https://https://w3id.org/situannotate#aboutAnnotatedEntity
 :aboutAnnotatedEntity rdf:type owl:ObjectProperty ;
                            rdfs:subPropertyOf :associatedWith ;
                            owl:inverseOf :hasAnnotation ;
@@ -104,7 +102,7 @@ dul:usesConcept rdf:type owl:ObjectProperty ;
                            rdfs:label "about annotated entity" .
 
 
-###  https://https://w3id.org/situannotate/ontology/core/annotationTypedBy
+###  https://https://w3id.org/situannotate#annotationTypedBy
 :annotationTypedBy rdf:type owl:ObjectProperty ;
                         rdfs:subPropertyOf :associatedWith ;
                         owl:inverseOf :typesAnnotation ;
@@ -114,7 +112,7 @@ dul:usesConcept rdf:type owl:ObjectProperty ;
                         rdfs:label "annotation typed by" .
 
 
-###  https://https://w3id.org/situannotate/ontology/core/annotationWithLexicalEntry
+###  https://https://w3id.org/situannotate#annotationWithLexicalEntry
 :annotationWithLexicalEntry rdf:type owl:ObjectProperty ;
                                  rdfs:subPropertyOf :associatedWith ;
                                  owl:inverseOf :lexicalEntryForAnnotation ;
@@ -124,7 +122,7 @@ dul:usesConcept rdf:type owl:ObjectProperty ;
                                  rdfs:label "annotation with lexical entry" .
 
 
-###  https://https://w3id.org/situannotate/ontology/core/associatedWith
+###  https://https://w3id.org/situannotate#associatedWith
 :associatedWith rdf:type owl:ObjectProperty ;
                      owl:inverseOf :associatedWith ;
                      rdf:type owl:SymmetricProperty ,
@@ -136,7 +134,7 @@ dul:usesConcept rdf:type owl:ObjectProperty ;
                      rdfs:label "associated with" .
 
 
-###  https://https://w3id.org/situannotate/ontology/core/classifies
+###  https://https://w3id.org/situannotate#classifies
 :classifies rdf:type owl:ObjectProperty ;
                  rdfs:subPropertyOf :associatedWith ;
                  owl:inverseOf :isClassifiedBy ;
@@ -147,14 +145,14 @@ dul:usesConcept rdf:type owl:ObjectProperty ;
                  rdfs:label "classifies" .
 
 
-###  https://https://w3id.org/situannotate/ontology/core/defines
+###  https://https://w3id.org/situannotate#defines
 :defines rdf:type owl:ObjectProperty ;
               rdfs:subPropertyOf :usesConcept ;
               rdfs:comment "Specifies a concept's definition." ;
               rdfs:label "defines" .
 
 
-###  https://https://w3id.org/situannotate/ontology/core/hasAffiliation
+###  https://https://w3id.org/situannotate#hasAffiliation
 :hasAffiliation rdf:type owl:ObjectProperty ;
                      rdfs:subPropertyOf :associatedWith ;
                      owl:inverseOf :isAffiliationOf ;
@@ -164,21 +162,21 @@ dul:usesConcept rdf:type owl:ObjectProperty ;
                      rdfs:label "has affiliation" .
 
 
-###  https://https://w3id.org/situannotate/ontology/core/hasAnnotation
+###  https://https://w3id.org/situannotate#hasAnnotation
 :hasAnnotation rdf:type owl:ObjectProperty ;
                     rdfs:subPropertyOf :associatedWith ;
                     rdfs:comment "Specifies the annotation relationship between two entities." ;
                     rdfs:label "has annotation" .
 
 
-###  https://https://w3id.org/situannotate/ontology/core/hasAnnotationPlace
+###  https://https://w3id.org/situannotate#hasAnnotationPlace
 :hasAnnotationPlace rdf:type owl:ObjectProperty ;
                          rdfs:subPropertyOf :associatedWith ;
                          rdfs:comment "Specifies the place in which an annotation situation took place." ;
                          rdfs:label "has annotation place" .
 
 
-###  https://https://w3id.org/situannotate/ontology/core/hasAnnotationSituation
+###  https://https://w3id.org/situannotate#hasAnnotationSituation
 :hasAnnotationSituation rdf:type owl:ObjectProperty ;
                              rdfs:subPropertyOf :hasSetting ;
                              owl:inverseOf :isAnnotationSituationOf ;
@@ -187,7 +185,7 @@ dul:usesConcept rdf:type owl:ObjectProperty ;
                              rdfs:label "has annotation situation" .
 
 
-###  https://https://w3id.org/situannotate/ontology/core/hasAnnotationTime
+###  https://https://w3id.org/situannotate#hasAnnotationTime
 :hasAnnotationTime rdf:type owl:ObjectProperty ;
                         rdfs:subPropertyOf :associatedWith ;
                         owl:inverseOf :isAnnotationTimeOfSituation ;
@@ -196,7 +194,7 @@ dul:usesConcept rdf:type owl:ObjectProperty ;
                         rdfs:label "has annotation time" .
 
 
-###  https://https://w3id.org/situannotate/ontology/core/hasAnnotationTypedBy
+###  https://https://w3id.org/situannotate#hasAnnotationTypedBy
 :hasAnnotationTypedBy rdf:type owl:ObjectProperty ;
                            rdfs:subPropertyOf :associatedWith ;
                            owl:inverseOf :typesAnnotationOf ;
@@ -206,14 +204,14 @@ dul:usesConcept rdf:type owl:ObjectProperty ;
                            rdfs:label "has annotation typed by" .
 
 
-###  https://https://w3id.org/situannotate/ontology/core/hasCause
+###  https://https://w3id.org/situannotate#hasCause
 :hasCause rdf:type owl:ObjectProperty ;
                rdfs:subPropertyOf :associatedWith ;
                owl:inverseOf :isCauseOf ;
                rdfs:comment "According to the Framester hub and the Quokka tool, the relation between a concept and another concept that causes it" ;
                rdfs:label "has cause" .
 
-###  https://https://w3id.org/situannotate/ontology/core/hasIndigenousAffiliation
+###  https://https://w3id.org/situannotate#hasIndigenousAffiliation
 :hasIndigenousAffiliation rdf:type owl:ObjectProperty ;
                                rdfs:subPropertyOf :hasAffiliation ;
                                owl:inverseOf :isIndigenousAffiliationOf ;
@@ -221,7 +219,7 @@ dul:usesConcept rdf:type owl:ObjectProperty ;
                                rdfs:label "has indigenous affiliation" .
 
 
-###  https://https://w3id.org/situannotate/ontology/core/hasLabelTypedBy
+###  https://https://w3id.org/situannotate#hasLabelTypedBy
 :hasLabelTypedBy rdf:type owl:ObjectProperty ;
                       rdfs:subPropertyOf :hasAnnotationTypedBy ;
                       owl:inverseOf :typesLabelOf ;
@@ -231,7 +229,7 @@ dul:usesConcept rdf:type owl:ObjectProperty ;
                       rdfs:label "has label typed by" .
 
 
-###  https://https://w3id.org/situannotate/ontology/core/hasPoliticalAffiliation
+###  https://https://w3id.org/situannotate#hasPoliticalAffiliation
 :hasPoliticalAffiliation rdf:type owl:ObjectProperty ;
                               rdfs:subPropertyOf :hasAffiliation ;
                               owl:inverseOf :isPoliticalAffiliationOf ;
@@ -239,7 +237,7 @@ dul:usesConcept rdf:type owl:ObjectProperty ;
                               rdfs:label "has political affiliation" .
 
 
-###  https://https://w3id.org/situannotate/ontology/core/hasRelatedConcept
+###  https://https://w3id.org/situannotate#hasRelatedConcept
 :hasRelatedConcept rdf:type owl:ObjectProperty ,
                                  owl:SymmetricProperty ;
                         rdfs:domain :Concept ;
@@ -248,7 +246,7 @@ dul:usesConcept rdf:type owl:ObjectProperty ;
                         rdfs:label "has related concept" .
 
 
-###  https://https://w3id.org/situannotate/ontology/core/hasReligiousAffiliation
+###  https://https://w3id.org/situannotate#hasReligiousAffiliation
 :hasReligiousAffiliation rdf:type owl:ObjectProperty ;
                               rdfs:subPropertyOf :hasAffiliation ;
                               owl:inverseOf :isReligiousAffiliationOf ;
@@ -256,7 +254,7 @@ dul:usesConcept rdf:type owl:ObjectProperty ;
                               rdfs:label "has religious affiliation" .
 
 
-###  https://https://w3id.org/situannotate/ontology/core/hasRole
+###  https://https://w3id.org/situannotate#hasRole
 :hasRole rdf:type owl:ObjectProperty ;
               rdfs:subPropertyOf :isClassifiedBy ;
               owl:inverseOf :isRoleOf ;
@@ -264,21 +262,21 @@ dul:usesConcept rdf:type owl:ObjectProperty ;
               rdfs:label "has role" .
 
 
-###  https://https://w3id.org/situannotate/ontology/core/hasSetting
+###  https://https://w3id.org/situannotate#hasSetting
 :hasSetting rdf:type owl:ObjectProperty ;
                  rdfs:subPropertyOf :associatedWith ;
                  rdfs:comment "Relates an entity with its setting." ;
                  rdfs:label "has setting" .
 
 
-###  https://https://w3id.org/situannotate/ontology/core/involves
+###  https://https://w3id.org/situannotate#involves
 :involves rdf:type owl:ObjectProperty ;
                rdfs:subPropertyOf :associatedWith ;
                rdfs:comment "Relates entities that are involved with each other." ;
                rdfs:label "involves" .
 
 
-###  https://https://w3id.org/situannotate/ontology/core/involvesAnnotatedEntity
+###  https://https://w3id.org/situannotate#involvesAnnotatedEntity
 :involvesAnnotatedEntity rdf:type owl:ObjectProperty ;
                               rdfs:subPropertyOf :involves ;
                               owl:inverseOf :isInvolvedInAnnotationSituation ;
@@ -288,7 +286,7 @@ dul:usesConcept rdf:type owl:ObjectProperty ;
                               rdfs:label "involves annotated entity" .
 
 
-###  https://https://w3id.org/situannotate/ontology/core/involvesAnnotator
+###  https://https://w3id.org/situannotate#involvesAnnotator
 :involvesAnnotator rdf:type owl:ObjectProperty ;
                         rdfs:subPropertyOf :involves ;
                         owl:inverseOf :isAnnotatorInvolvedInSituation ;
@@ -298,7 +296,7 @@ dul:usesConcept rdf:type owl:ObjectProperty ;
                         rdfs:label "involves annotator" .
 
 
-###  https://https://w3id.org/situannotate/ontology/core/involvesDataset
+###  https://https://w3id.org/situannotate#involvesDataset
 :involvesDataset rdf:type owl:ObjectProperty ;
                       rdfs:subPropertyOf :involves ;
                       owl:inverseOf :isDatasetInvolvedInSituation ;
@@ -308,7 +306,7 @@ dul:usesConcept rdf:type owl:ObjectProperty ;
                       rdfs:label "involves dataset" .
 
 
-###  https://https://w3id.org/situannotate/ontology/core/involvesRemunerationScheme
+###  https://https://w3id.org/situannotate#involvesRemunerationScheme
 :involvesRemunerationScheme rdf:type owl:ObjectProperty ;
                                  rdfs:subPropertyOf :involves ;
                                  owl:inverseOf :isRemunerationSchemeOfSituation ;
@@ -318,14 +316,14 @@ dul:usesConcept rdf:type owl:ObjectProperty ;
                                  rdfs:label "involves remuneration scheme" .
 
 
-###  https://https://w3id.org/situannotate/ontology/core/isAffiliationOf
+###  https://https://w3id.org/situannotate#isAffiliationOf
 :isAffiliationOf rdf:type owl:ObjectProperty ;
                       rdfs:subPropertyOf :associatedWith ;
                       rdfs:comment "Relates an entity with its affiliation." ;
                       rdfs:label "is affiliation of" .
 
 
-###  https://https://w3id.org/situannotate/ontology/core/isAnnotatedWithLexicalEntry
+###  https://https://w3id.org/situannotate#isAnnotatedWithLexicalEntry
 :isAnnotatedWithLexicalEntry rdf:type owl:ObjectProperty ;
                                   rdfs:subPropertyOf :associatedWith ;
                                   owl:inverseOf :isLexicalEntryOfAnnotationFor ;
@@ -335,21 +333,21 @@ dul:usesConcept rdf:type owl:ObjectProperty ;
                                   rdfs:label "is annotated with lexical entry" .
 
 
-###  https://https://w3id.org/situannotate/ontology/core/isAnnotationPlaceOfSituation
+###  https://https://w3id.org/situannotate#isAnnotationPlaceOfSituation
 :isAnnotationPlaceOfSituation rdf:type owl:ObjectProperty ;
                                    rdfs:subPropertyOf :associatedWith ;
                                    rdfs:comment "Relates an annotation place with the situation it is associated with." ;
                                    rdfs:label "is annotation place of situation" .
 
 
-###  https://https://w3id.org/situannotate/ontology/core/isAnnotationSituationOf
+###  https://https://w3id.org/situannotate#isAnnotationSituationOf
 :isAnnotationSituationOf rdf:type owl:ObjectProperty ;
                               rdfs:subPropertyOf :isSettingFor ;
                               rdfs:comment "Relates a setting with the annotation situation it is associated with." ;
                               rdfs:label "is annotation situation of" .
 
 
-###  https://https://w3id.org/situannotate/ontology/core/isAnnotationTimeOfSituation
+###  https://https://w3id.org/situannotate#isAnnotationTimeOfSituation
 :isAnnotationTimeOfSituation rdf:type owl:ObjectProperty ;
                                   rdfs:subPropertyOf :associatedWith ;
                                   rdfs:domain dul:Entity ;
@@ -357,21 +355,21 @@ dul:usesConcept rdf:type owl:ObjectProperty ;
                                   rdfs:label "is annotation time of situation" .
 
 
-###  https://https://w3id.org/situannotate/ontology/core/isAnnotatorInvolvedInSituation
+###  https://https://w3id.org/situannotate#isAnnotatorInvolvedInSituation
 :isAnnotatorInvolvedInSituation rdf:type owl:ObjectProperty ;
                                      rdfs:subPropertyOf :involves ;
                                      rdfs:comment "Relates an annotator with the situation they are involved in." ;
                                      rdfs:label "is annotator involved in situation" .
 
 
-###  https://https://w3id.org/situannotate/ontology/core/isCauseOf
+###  https://https://w3id.org/situannotate#isCauseOf
 :isCauseOf rdf:type owl:ObjectProperty ;
                 rdfs:subPropertyOf :associatedWith ;
                 rdfs:domain :Concept ;
                 rdfs:range :Concept .
 
 
-###  https://https://w3id.org/situannotate/ontology/core/isClassifiedBy
+###  https://https://w3id.org/situannotate#isClassifiedBy
 :isClassifiedBy rdf:type owl:ObjectProperty ;
                      rdfs:subPropertyOf :associatedWith ;
                      rdfs:comment "Equivalent to dul:isClassifiedBy" ,
@@ -379,21 +377,21 @@ dul:usesConcept rdf:type owl:ObjectProperty ;
                      rdfs:label "is classified by" .
 
 
-###  https://https://w3id.org/situannotate/ontology/core/isConceptUsedIn
+###  https://https://w3id.org/situannotate#isConceptUsedIn
 :isConceptUsedIn rdf:type owl:ObjectProperty ;
                       rdfs:subPropertyOf :associatedWith ;
                       rdfs:comment "Relates a concept with the entities it is used in." ;
                       rdfs:label "is concept used in" .
 
 
-###  https://https://w3id.org/situannotate/ontology/core/isDatasetInvolvedInSituation
+###  https://https://w3id.org/situannotate#isDatasetInvolvedInSituation
 :isDatasetInvolvedInSituation rdf:type owl:ObjectProperty ;
                                    rdfs:subPropertyOf :involves ;
                                    rdfs:comment "Relates a dataset with the situation it is involved in." ;
                                    rdfs:label "is dataset involved in situation" .
 
 
-###  https://https://w3id.org/situannotate/ontology/core/isDefinedIn
+###  https://https://w3id.org/situannotate#isDefinedIn
 :isDefinedIn rdf:type owl:ObjectProperty ;
                   rdfs:subPropertyOf :isConceptUsedIn ;
                   rdfs:domain :Role ;
@@ -402,21 +400,21 @@ dul:usesConcept rdf:type owl:ObjectProperty ;
                   rdfs:label "is defined in" .
 
 
-###  https://https://w3id.org/situannotate/ontology/core/isIndigenousAffiliationOf
+###  https://https://w3id.org/situannotate#isIndigenousAffiliationOf
 :isIndigenousAffiliationOf rdf:type owl:ObjectProperty ;
                                 rdfs:subPropertyOf :isAffiliationOf ;
                                 rdfs:comment "Relates an affiliation with the indigenous entity it is associated with." ;
                                 rdfs:label "is indigenous affiliation of" .
 
 
-###  https://https://w3id.org/situannotate/ontology/core/isInvolvedInAnnotationSituation
+###  https://https://w3id.org/situannotate#isInvolvedInAnnotationSituation
 :isInvolvedInAnnotationSituation rdf:type owl:ObjectProperty ;
                                       rdfs:subPropertyOf :involves ;
                                       rdfs:comment "Relates an entity with the annotation situation it is involved in." ;
                                       rdfs:label "is involved in annotation situation" .
 
 
-###  https://https://w3id.org/situannotate/ontology/core/isLexicalEntryOfAnnotationFor
+###  https://https://w3id.org/situannotate#isLexicalEntryOfAnnotationFor
 :isLexicalEntryOfAnnotationFor rdf:type owl:ObjectProperty ;
                                     rdfs:subPropertyOf :associatedWith ;
                                     rdfs:domain :Entity ;
@@ -425,7 +423,7 @@ dul:usesConcept rdf:type owl:ObjectProperty ;
                                     rdfs:label "is lexical entry of annotation for" .
 
 
-###  https://https://w3id.org/situannotate/ontology/core/isPoliticalAffiliationOf
+###  https://https://w3id.org/situannotate#isPoliticalAffiliationOf
 :isPoliticalAffiliationOf rdf:type owl:ObjectProperty ;
                                rdfs:subPropertyOf :isAffiliationOf ;
                                rdfs:domain :PoliticalAffiliation ;
@@ -434,7 +432,7 @@ dul:usesConcept rdf:type owl:ObjectProperty ;
                                rdfs:label "is political affiliation of" .
 
 
-###  https://https://w3id.org/situannotate/ontology/core/isProvokedBy
+###  https://https://w3id.org/situannotate#isProvokedBy
 :isProvokedBy rdf:type owl:ObjectProperty ;
                    rdfs:subPropertyOf :associatedWith ;
                    owl:inverseOf :provokes ;
@@ -442,21 +440,21 @@ dul:usesConcept rdf:type owl:ObjectProperty ;
                    rdfs:label "is provoked by" .
 
 
-###  https://https://w3id.org/situannotate/ontology/core/isReligiousAffiliationOf
+###  https://https://w3id.org/situannotate#isReligiousAffiliationOf
 :isReligiousAffiliationOf rdf:type owl:ObjectProperty ;
                                rdfs:subPropertyOf :isAffiliationOf ;
                                rdfs:comment "Relates a religious affiliation with the entity it is associated with." ;
                                rdfs:label "is religious affiliation of" .
 
 
-###  https://https://w3id.org/situannotate/ontology/core/isRemunerationSchemeOfSituation
+###  https://https://w3id.org/situannotate#isRemunerationSchemeOfSituation
 :isRemunerationSchemeOfSituation rdf:type owl:ObjectProperty ;
                                       rdfs:subPropertyOf :involves ;
                                       rdfs:comment "Relates a situation with the remuneration scheme involved in it." ;
                                       rdfs:label "is remuneration scheme of situation" .
 
 
-###  https://https://w3id.org/situannotate/ontology/core/isRoleOf
+###  https://https://w3id.org/situannotate#isRoleOf
 :isRoleOf rdf:type owl:ObjectProperty ;
                rdfs:subPropertyOf :classifies ;
                rdfs:domain :Role ;
@@ -465,7 +463,7 @@ dul:usesConcept rdf:type owl:ObjectProperty ;
                rdfs:label "is role of" .
 
 
-###  https://https://w3id.org/situannotate/ontology/core/isSatisfiedBy
+###  https://https://w3id.org/situannotate#isSatisfiedBy
 :isSatisfiedBy rdf:type owl:ObjectProperty ;
                     rdfs:subPropertyOf :associatedWith ;
                     owl:inverseOf :satisfies ;
@@ -474,21 +472,21 @@ dul:usesConcept rdf:type owl:ObjectProperty ;
                     rdfs:label "is satisfied by" .
 
 
-###  https://https://w3id.org/situannotate/ontology/core/isSettingFor
+###  https://https://w3id.org/situannotate#isSettingFor
 :isSettingFor rdf:type owl:ObjectProperty ;
                    rdfs:subPropertyOf :associatedWith ;
                    rdfs:comment "Relates an entity with the setting it is associated with. Equivalent to dul:isSettingFor." ;
                    rdfs:label "is setting for" .
 
 
-###  https://https://w3id.org/situannotate/ontology/core/lexicalEntryForAnnotation
+###  https://https://w3id.org/situannotate#lexicalEntryForAnnotation
 :lexicalEntryForAnnotation rdf:type owl:ObjectProperty ;
                                 rdfs:subPropertyOf :associatedWith ;
                                 rdfs:comment "Relates a lexical entry with the annotation it is associated with." ;
                                 rdfs:label "lexical entry for annotation" .
 
 
-###  https://https://w3id.org/situannotate/ontology/core/provokes
+###  https://https://w3id.org/situannotate#provokes
 :provokes rdf:type owl:ObjectProperty ;
                rdfs:subPropertyOf :associatedWith ;
                rdfs:domain :Concept ;
@@ -496,35 +494,35 @@ dul:usesConcept rdf:type owl:ObjectProperty ;
                rdfs:label "provokes" .
 
 
-###  https://https://w3id.org/situannotate/ontology/core/realizes
+###  https://https://w3id.org/situannotate#realizes
 :realizes rdf:type owl:ObjectProperty ;
                rdfs:subPropertyOf :associatedWith ;
                rdfs:comment "Relates an entity with the realization it is associated with." ;
                rdfs:label "realizes" .
 
 
-###  https://https://w3id.org/situannotate/ontology/core/satisfies
+###  https://https://w3id.org/situannotate#satisfies
 :satisfies rdf:type owl:ObjectProperty ;
                 rdfs:subPropertyOf :associatedWith ;
                 rdfs:comment "Relates a description with the entity it satisfies." ;
                 rdfs:label "satisfies" .
 
 
-###  https://https://w3id.org/situannotate/ontology/core/typesAnnotation
+###  https://https://w3id.org/situannotate#typesAnnotation
 :typesAnnotation rdf:type owl:ObjectProperty ;
                       rdfs:subPropertyOf :associatedWith ;
                       rdfs:comment "Relates a concept with the annotation it types." ;
                       rdfs:label "types annotation" .
 
 
-###  https://https://w3id.org/situannotate/ontology/core/typesAnnotationOf
+###  https://https://w3id.org/situannotate#typesAnnotationOf
 :typesAnnotationOf rdf:type owl:ObjectProperty ;
                         rdfs:subPropertyOf :associatedWith ;
                         rdfs:comment "Relates a concept with an entity that has been annotated with a lexical entry typed by such concept." ;
                         rdfs:label "types annotation of" .
 
 
-###  https://https://w3id.org/situannotate/ontology/core/usesConcept
+###  https://https://w3id.org/situannotate#usesConcept
 :usesConcept rdf:type owl:ObjectProperty ;
                   rdfs:subPropertyOf :associatedWith ;
                   rdfs:comment "Relates an entity with the concept it uses." ;
@@ -550,28 +548,28 @@ skos:notation rdf:type owl:DatatypeProperty ;
               owl:equivalentProperty :notation .
 
 
-###  https://https://w3id.org/situannotate/ontology/core/hasAnnotationStrength
+###  https://https://w3id.org/situannotate#hasAnnotationStrength
 :hasAnnotationStrength rdf:type owl:DatatypeProperty ;
                             rdfs:domain :Annotation ;
                             rdfs:range xsd:decimal .
 
 
-###  https://https://w3id.org/situannotate/ontology/core/hasCoverage
+###  https://https://w3id.org/situannotate#hasCoverage
 :hasCoverage rdf:type owl:DatatypeProperty ;
                   rdfs:subPropertyOf :hasDataValue ;
                   rdfs:range xsd:decimal .
 
 
-###  https://https://w3id.org/situannotate/ontology/core/hasDataValue
+###  https://https://w3id.org/situannotate#hasDataValue
 :hasDataValue rdf:type owl:DatatypeProperty ;
                    rdfs:label "has data value" .
 
 
-###  https://https://w3id.org/situannotate/ontology/core/hasDate
+###  https://https://w3id.org/situannotate#hasDate
 :hasDate rdf:type owl:DatatypeProperty ;
               rdfs:range xsd:dateTime .
 
-###  https://https://w3id.org/situannotate/ontology/core/isDateOf
+###  https://https://w3id.org/situannotate#isDateOf
 :isDateOf rdf:type owl:DatatypeProperty ;
                rdfs:domain [ rdf:type owl:Restriction ;
                              owl:onProperty :hasDate ;
@@ -581,7 +579,7 @@ skos:notation rdf:type owl:DatatypeProperty ;
                rdfs:label "is date of" .
 
 
-###  https://https://w3id.org/situannotate/ontology/core/notation
+###  https://https://w3id.org/situannotate#notation
 :notation rdf:type owl:DatatypeProperty .
 
 #################################################################
@@ -675,56 +673,56 @@ fschema:Frame rdf:type owl:Class .
 fschema:Synset rdf:type owl:Class ;
                owl:equivalentClass :WnSynsetFrame .
 
-###  https://https://w3id.org/situannotate/ontology/core/Affiliation
+###  https://https://w3id.org/situannotate#Affiliation
 :Affiliation rdf:type owl:Class ;
                   rdfs:subClassOf :SocialObject ;
                   rdfs:comment "An affiliation group, whether it is political, religious, indigenous, etc. An Agent can have an affiliation to it" ;
                   rdfs:label "Affiliation" .
 
 
-###  https://https://w3id.org/situannotate/ontology/core/Agent
+###  https://https://w3id.org/situannotate#Agent
 :Agent rdf:type owl:Class ;
             rdfs:subClassOf :Object ;
             rdfs:comment "An agent that can perform actions." ;
             rdfs:label "Agent" .
 
 
-###  https://https://w3id.org/situannotate/ontology/core/Annotation
+###  https://https://w3id.org/situannotate#Annotation
 :Annotation rdf:type owl:Class ;
                  rdfs:subClassOf :SocialObject ;
                  rdfs:comment "A single annotation made about a certain Entity with a LexicalEntry. " ;
                  rdfs:label "Annotation" .
 
 
-###  https://https://w3id.org/situannotate/ontology/core/AnnotationDescription
+###  https://https://w3id.org/situannotate#AnnotationDescription
 :AnnotationDescription rdf:type owl:Class ;
                             rdfs:subClassOf :Description ;
                             rdfs:comment "A description of an annotation, which can be satisfied by annotation situations." ;
                             rdfs:label "Annotation Description" .
 
 
-###  https://https://w3id.org/situannotate/ontology/core/AnnotationRole
+###  https://https://w3id.org/situannotate#AnnotationRole
 :AnnotationRole rdf:type owl:Class ;
                      rdfs:subClassOf :Role ;
                      rdfs:comment "A role associated with an annotation type." ;
                      rdfs:label "Annotation Role" .
 
 
-###  https://https://w3id.org/situannotate/ontology/core/AnnotationSituation
+###  https://https://w3id.org/situannotate#AnnotationSituation
 :AnnotationSituation rdf:type owl:Class ;
                           rdfs:subClassOf :Situation ;
                           rdfs:comment "An annotation situation is the state of affairs within which an Annotation takes place." ;
                           rdfs:label "Annotation Situation" .
 
 
-###  https://https://w3id.org/situannotate/ontology/core/Annotator
+###  https://https://w3id.org/situannotate#Annotator
 :Annotator rdf:type owl:Class ;
                 rdfs:subClassOf :Agent ;
                 rdfs:comment "An annotator who creates annotations." ;
                 rdfs:label "Annotator" .
 
 
-###  https://https://w3id.org/situannotate/ontology/core/AnnotatorCommunity
+###  https://https://w3id.org/situannotate#AnnotatorCommunity
 :AnnotatorCommunity rdf:type owl:Class ;
                          rdfs:subClassOf :Annotator ,
                                          :CollectiveAgent ;
@@ -732,153 +730,153 @@ fschema:Synset rdf:type owl:Class ;
                          rdfs:label "Annotator Community" .
 
 
-###  https://https://w3id.org/situannotate/ontology/core/CollectiveAgent
+###  https://https://w3id.org/situannotate#CollectiveAgent
 :CollectiveAgent rdf:type owl:Class ;
                       rdfs:subClassOf :Agent ;
                       rdfs:comment "A collective agent that acts as a group." ;
                       rdfs:label "Collective Agent" .
 
-###  https://https://w3id.org/situannotate/ontology/core/Concept
+###  https://https://w3id.org/situannotate#Concept
 :Concept rdf:type owl:Class ;
               rdfs:subClassOf :SocialObject ;
               rdfs:comment "A concept or idea." ;
               rdfs:label "Concept" .
 
 
-###  https://https://w3id.org/situannotate/ontology/core/ConceptualFrame
+###  https://https://w3id.org/situannotate#ConceptualFrame
 :ConceptualFrame rdf:type owl:Class .
 
 
-###  https://https://w3id.org/situannotate/ontology/core/Country
+###  https://https://w3id.org/situannotate#Country
 :Country rdf:type owl:Class ;
               rdfs:subClassOf :Place ;
               rdfs:comment "A country or nation." ;
               rdfs:label "Country" .
 
 
-###  https://https://w3id.org/situannotate/ontology/core/Dataset
+###  https://https://w3id.org/situannotate#Dataset
 :Dataset rdf:type owl:Class ;
               rdfs:subClassOf :SocialObject ;
               rdfs:comment "A dataset or collection of data, such as image datasets and lexical corpora." ;
               rdfs:label "Dataset" .
 
 
-###  https://https://w3id.org/situannotate/ontology/core/Description
+###  https://https://w3id.org/situannotate#Description
 :Description rdf:type owl:Class ;
                   rdfs:subClassOf :Entity ;
                   rdfs:comment "A description or representation of an entity." ;
                   rdfs:label "Description" .
 
 
-###  https://https://w3id.org/situannotate/ontology/core/Entity
+###  https://https://w3id.org/situannotate#Entity
 :Entity rdf:type owl:Class ;
              rdfs:comment "An entity or object." ;
              rdfs:label "Entity" .
 
-###  https://https://w3id.org/situannotate/ontology/core/IndigenousAffiliation
+###  https://https://w3id.org/situannotate#IndigenousAffiliation
 :IndigenousAffiliation rdf:type owl:Class ;
                             rdfs:subClassOf :Affiliation ;
                             rdfs:comment "An affiliation group related to indigenous identities." ;
                             rdfs:label "Indigenous Affiliation" .
 
 
-###  https://https://w3id.org/situannotate/ontology/core/IndividualAnnotator
+###  https://https://w3id.org/situannotate#IndividualAnnotator
 :IndividualAnnotator rdf:type owl:Class ;
                           rdfs:subClassOf :Annotator ;
                           rdfs:comment "An individual annotator." ;
                           rdfs:label "Individual Annotator" .
 
 
-###  https://https://w3id.org/situannotate/ontology/core/InformationEntity
+###  https://https://w3id.org/situannotate#InformationEntity
 :InformationEntity rdf:type owl:Class ;
                         rdfs:subClassOf :Entity ;
                         rdfs:comment "An entity that contains information." ;
                         rdfs:label "Information Entity" .
 
 
-###  https://https://w3id.org/situannotate/ontology/core/InformationObject
+###  https://https://w3id.org/situannotate#InformationObject
 :InformationObject rdf:type owl:Class ;
                         rdfs:subClassOf :InformationEntity ;
                         rdfs:comment "An object that contains information." ;
                         rdfs:label "Information Object" .
 
 
-###  https://https://w3id.org/situannotate/ontology/core/InformationRealization
+###  https://https://w3id.org/situannotate#InformationRealization
 :InformationRealization rdf:type owl:Class .
 
 
-###  https://https://w3id.org/situannotate/ontology/core/LexicalEntry
+###  https://https://w3id.org/situannotate#LexicalEntry
 :LexicalEntry rdf:type owl:Class ;
                    rdfs:subClassOf :SocialObject ;
                    rdfs:comment "A lexical entry represents a unit of analysis of the lexicon that consists of a set of forms that are grammatically related and a set of base meanings that are associated with all of these forms. Thus, a lexical entry is a word, multiword expression or affix with a single part-of-speech, morphological pattern, etymology and set of senses." ;
                    rdfs:label "Lexical Entry" .
 
 
-###  https://https://w3id.org/situannotate/ontology/core/Object
+###  https://https://w3id.org/situannotate#Object
 :Object rdf:type owl:Class ;
              rdfs:subClassOf :Entity ;
              rdfs:comment "An object or entity." ;
              rdfs:label "Object" .
 
 
-###  https://https://w3id.org/situannotate/ontology/core/Place
+###  https://https://w3id.org/situannotate#Place
 :Place rdf:type owl:Class ;
             rdfs:subClassOf :SocialObject ;
             rdfs:comment "A place or location." ;
             rdfs:label "Place" .
 
 
-###  https://https://w3id.org/situannotate/ontology/core/PoliticalAffiliation
+###  https://https://w3id.org/situannotate#PoliticalAffiliation
 :PoliticalAffiliation rdf:type owl:Class ;
                            rdfs:subClassOf :Affiliation ;
                            rdfs:comment "An affiliation group related to political identities." ;
                            rdfs:label "Political Affiliation" .
 
-###  https://https://w3id.org/situannotate/ontology/core/ReligiousAffiliation
+###  https://https://w3id.org/situannotate#ReligiousAffiliation
 :ReligiousAffiliation rdf:type owl:Class ;
                            rdfs:subClassOf :Affiliation ;
                            rdfs:comment "An affiliation group related to religious identities." ;
                            rdfs:label "Religious Affiliation" .
 
 
-###  https://https://w3id.org/situannotate/ontology/core/RemunerationScheme
+###  https://https://w3id.org/situannotate#RemunerationScheme
 :RemunerationScheme rdf:type owl:Class ;
                          rdfs:subClassOf :SocialObject ;
                          rdfs:comment "A scheme or system for remuneration." ;
                          rdfs:label "Remuneration Scheme" .
 
 
-###  https://https://w3id.org/situannotate/ontology/core/Role
+###  https://https://w3id.org/situannotate#Role
 :Role rdf:type owl:Class ;
            rdfs:subClassOf :Concept ;
            rdfs:comment "A role or position." ;
            rdfs:label "Role" .
 
 
-###  https://https://w3id.org/situannotate/ontology/core/Situation
+###  https://https://w3id.org/situannotate#Situation
 :Situation rdf:type owl:Class ;
                 rdfs:subClassOf :Entity ;
                 rdfs:comment "A situation or context." ;
                 rdfs:label "Situation" .
 
 
-###  https://https://w3id.org/situannotate/ontology/core/SocialConcept
+###  https://https://w3id.org/situannotate#SocialConcept
 :SocialConcept rdf:type owl:Class ;
                     rdfs:subClassOf :Concept ;
                     rdfs:comment "A social concept or idea." ;
                     rdfs:label "Social Concept" .
 
 
-###  https://https://w3id.org/situannotate/ontology/core/SocialObject
+###  https://https://w3id.org/situannotate#SocialObject
 :SocialObject rdf:type owl:Class ;
                    rdfs:subClassOf :Object ;
                    rdfs:comment "A social object or entity." ;
                    rdfs:label "Social Object" .
 
 
-###  https://https://w3id.org/situannotate/ontology/core/SpaceRegion
+###  https://https://w3id.org/situannotate#SpaceRegion
 :SpaceRegion rdf:type owl:Class .
 
 
-###  https://https://w3id.org/situannotate/ontology/core/WnSynsetFrame
+###  https://https://w3id.org/situannotate#WnSynsetFrame
 :WnSynsetFrame rdf:type owl:Class .
