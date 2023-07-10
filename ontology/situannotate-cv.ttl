@@ -1,0 +1,175 @@
+@prefix : <https://w3id.org/situannotate-cv#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dul: <http://www.ontologydesignpatterns.org/ont/dul/dul.owl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix terms: <http://purl.org/dc/terms/> .
+@prefix fschema: <https://w3id.org/framester/schema/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix situannotate: <https://w3id.org/situannotate#> .
+
+@base <https://w3id.org/situannotate-cv#> .
+
+<https://w3id.org/situannotate-cv#> rdf:type owl:Ontology ;
+                                 dc:creator "Delfina Sol Martinez Pandiani" ;
+                                 rdfs:comment "This is the SituAnnotate ontology module for representing computer vision (CV) annotation situations. It imports and specializes the core situAnnotate ontology." ;
+                                 owl:imports <https://w3id.org/situannotate#> .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  <https://w3id.org/situannotate-cv#hasLabelTypedBy
+:hasLabelTypedBy rdf:type owl:ObjectProperty ;
+                          rdfs:subPropertyOf situannotate:hasAnnotationTypedBy ;
+                          owl:inverseOf :typesLabelOf ;
+                          rdfs:domain :Image ;
+                          rdfs:range situannotate:Concept ;
+                          rdfs:comment "Relates an image with a concept that types one of its labels." ;
+                          rdfs:label "has label typed by" .
+
+###  <https://w3id.org/situannotate-cv#typesLabelOf
+:typesLabelOf rdf:type owl:ObjectProperty ;
+                       rdfs:subPropertyOf situannotate:typesAnnotationOf ;
+                       rdfs:domain situannotate:Concept ;
+                       rdfs:range :Image ;
+                       rdfs:comment "Relates a concept which types a label with the image that has been annotated with that label." ;
+                       rdfs:label "types label of" .
+
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  <https://w3id.org/situannotate-cv#Image
+:Image rdf:type owl:Class ;
+            rdfs:subClassOf situannotate:InformationObject ;
+            rdfs:comment "An image or picture." ;
+            rdfs:label "Image" .
+
+
+###  <https://w3id.org/situannotate-cv#ImageAnnotation
+:CollocationAnnotation rdf:type owl:Class ;
+                            rdfs:subClassOf situannotate:Annotation ;
+                            rdfs:comment "An annotation made on an image with a LexicalEntry." ;
+                            rdfs:label "Image Annotation" .
+
+
+###  <https://w3id.org/situannotate-cv#ImageAnnotationDescription
+:ImageAnnotationDescription rdf:type owl:Class ;
+                                       rdfs:subClassOf situannotate:AnnotationDescription ;
+                                       rdfs:comment "A description of an image annotation, satisfied by a ImageAnnotationSituation." ;
+                                       rdfs:label "Image Annotation Description" .
+
+
+###  <https://w3id.org/situannotate-cv#ImageAnnotationRole
+:ImageAnnotationRole rdf:type owl:Class ;
+                      rdfs:subClassOf situannotate:AnnotationRole ;
+                      rdfs:comment "A role associated with an image annotation." ;
+                      rdfs:label "Image Annotation Role" .
+
+
+###  <https://w3id.org/situannotate/ontology/situannotate-dl/ImageAnnotationSituation
+:ImageAnnotationSituation rdf:type owl:Class ;
+                           rdfs:subClassOf situannotate:AnnotationSituation ;
+                           rdfs:comment "A situation in which an image annotation occurs." ;
+                           rdfs:label "Image Annotation Situation" .
+
+
+###  http://www.ontologydesignpatterns.org/ont/dul/dul.owl#Region
+dul:Region rdf:type owl:Class ;
+           owl:equivalentClass :Region .
+
+
+###  http://www.ontologydesignpatterns.org/ont/dul/dul.owl#SpaceRegion
+dul:SpaceRegion rdf:type owl:Class ;
+                owl:equivalentClass :SpaceRegion .
+
+
+###  https://w3id.org/situannotate-cv#Region
+:Region rdf:type owl:Class .
+
+###  https://w3id.org/situannotate-cv#SpaceRegion
+:SpaceRegion rdf:type owl:Class .
+
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.ontologydesignpatterns.org/ont/dul/dul.owl#hasDataValue
+dul:hasDataValue rdf:type owl:DatatypeProperty ;
+                 owl:equivalentProperty :hasDataValue .
+
+
+###  http://www.ontologydesignpatterns.org/ont/dul/dul.owl#hasRegionDataValue
+dul:hasRegionDataValue rdf:type owl:DatatypeProperty ;
+                       owl:equivalentProperty :hasRegionDataValue .
+
+
+###  https://w3id.org/situannotate-cv#hasDataValue
+:hasDataValue rdf:type owl:DatatypeProperty ;
+                   rdfs:label "has data value" .
+
+
+
+###  https://w3id.org/situannotate-cv#hasHeight
+:hasHeight rdf:type owl:DatatypeProperty ;
+                rdfs:subPropertyOf :hasRegionDataValue ;
+                rdfs:range xsd:decimal ;
+                rdfs:label "has height" .
+
+
+###  https://w3id.org/situannotate-cv#hasRegionDataValue
+:hasRegionDataValue rdf:type owl:DatatypeProperty ;
+                         rdfs:subPropertyOf :hasDataValue ;
+                         rdfs:comment "A datatype property that encodes values for a Region, e.g. a float for the Region Height." ;
+                         rdfs:isDefinedBy <https://w3id.org/mosaic> ;
+                         rdfs:label "has region data value"@en ,
+                                    "regione ha valore"@it .
+
+###  https://w3id.org/situannotate-cv#hasWidth
+:hasWidth rdf:type owl:DatatypeProperty ;
+               rdfs:subPropertyOf :hasRegionDataValue ;
+               rdfs:range xsd:decimal ;
+               rdfs:label "has width" .
+
+
+###  https://w3id.org/situannotate-cv#hasXCoordinate
+:hasXCoordinate rdf:type owl:DatatypeProperty ;
+                     rdfs:subPropertyOf :hasRegionDataValue ;
+                     rdfs:range xsd:decimal ;
+                     rdfs:label "has x coordinate" .
+
+
+###  https://w3id.org/situannotate-cv#hasYCoordinate
+:hasYCoordinate rdf:type owl:DatatypeProperty ;
+                     rdfs:subPropertyOf :hasRegionDataValue ;
+                     rdfs:range xsd:decimal ;
+                     rdfs:label "has y coordinate" .
+
+
+###  https://w3id.org/situannotate-cv#rgbCoordinateBlue
+:rgbCoordinateBlue rdf:type owl:DatatypeProperty ;
+                        rdfs:subPropertyOf :hasDataValue ;
+                        rdfs:range xsd:nonNegativeInteger .
+
+
+###  https://w3id.org/situannotate-cv#rgbCoordinateGreen
+:rgbCoordinateGreen rdf:type owl:DatatypeProperty ;
+                         rdfs:subPropertyOf :hasDataValue ;
+                         rdfs:range xsd:nonNegativeInteger .
+
+
+###  https://w3id.org/situannotate-cv#rgbCoordinateRed
+:rgbCoordinateRed rdf:type owl:DatatypeProperty ;
+                       rdfs:subPropertyOf :hasDataValue ;
+                       rdfs:range xsd:nonNegativeInteger .
+
+
