@@ -7,3 +7,4 @@ This is the SituAnnotate ontology, an ontological module for Annotation Situatio
 
 **Contacts:**
 * Delfina Sol Martinez Pandiani <delfinasol.martinez2@unibo.it> - GitHub: https://github.com/delfimpandiani
+![situAnnotate drawio](https://github.com/delfimpandiani/situAnnotate/assets/44606644/90bf7cc9-661b-4cc5-866a-ec6363e51525)
