@@ -56,6 +56,14 @@
     
 
 
+    <!-- http://www.ontologydesignpatterns.org/cp/owl/situation.owl#isSettingFor -->
+
+    <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/cp/owl/situation.owl#isSettingFor">
+        <owl:equivalentProperty rdf:resource="https://w3id.org/situannotate#isSettingFor"/>
+    </rdf:Description>
+    
+
+
     <!-- http://www.ontologydesignpatterns.org/ont/dul/dul.owl#associatedWith -->
 
     <owl:ObjectProperty rdf:about="http://www.ontologydesignpatterns.org/ont/dul/dul.owl#associatedWith">
@@ -1375,6 +1383,15 @@
     
 
 
+    <!-- https://w3id.org/situannotate#ActionAnnotationSituation -->
+
+    <owl:Class rdf:about="https://w3id.org/situannotate#ActionAnnotationSituation">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/situannotate#ImageAnnotationSituation"/>
+        <rdfs:label>action annotation situation</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- https://w3id.org/situannotate#Affiliation -->
 
     <owl:Class rdf:about="https://w3id.org/situannotate#Affiliation">
@@ -1389,6 +1406,15 @@
 
     <owl:Class rdf:about="https://w3id.org/situannotate#AgeAnnotation">
         <rdfs:subClassOf rdf:resource="https://w3id.org/situannotate#ImageAnnotation"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/situannotate#AgeAnnotationSituation -->
+
+    <owl:Class rdf:about="https://w3id.org/situannotate#AgeAnnotationSituation">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/situannotate#ImageAnnotationSituation"/>
+        <rdfs:label>age annotation situation</rdfs:label>
     </owl:Class>
     
 
@@ -1461,6 +1487,15 @@
     
 
 
+    <!-- https://w3id.org/situannotate#ArtStyleAnnotationSituation -->
+
+    <owl:Class rdf:about="https://w3id.org/situannotate#ArtStyleAnnotationSituation">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/situannotate#ImageAnnotationSituation"/>
+        <rdfs:label>art style annotation situation</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- https://w3id.org/situannotate#ArtificialAnnotator -->
 
     <owl:Class rdf:about="https://w3id.org/situannotate#ArtificialAnnotator">
@@ -1483,6 +1518,15 @@
 
     <owl:Class rdf:about="https://w3id.org/situannotate#ColorAnnotation">
         <rdfs:subClassOf rdf:resource="https://w3id.org/situannotate#ImageAnnotation"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/situannotate#ColorAnnotationSituation -->
+
+    <owl:Class rdf:about="https://w3id.org/situannotate#ColorAnnotationSituation">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/situannotate#ImageAnnotationSituation"/>
+        <rdfs:label>color annotation situation</rdfs:label>
     </owl:Class>
     
 
@@ -1531,6 +1575,15 @@
 
     <owl:Class rdf:about="https://w3id.org/situannotate#EmotionAnnotation">
         <rdfs:subClassOf rdf:resource="https://w3id.org/situannotate#ImageAnnotation"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/situannotate#EmotionAnnotationSituation -->
+
+    <owl:Class rdf:about="https://w3id.org/situannotate#EmotionAnnotationSituation">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/situannotate#ImageAnnotationSituation"/>
+        <rdfs:label>emotion annotation situation</rdfs:label>
     </owl:Class>
     
 
@@ -1621,6 +1674,15 @@
     
 
 
+    <!-- https://w3id.org/situannotate#ImageCaptionAnnotationSituation -->
+
+    <owl:Class rdf:about="https://w3id.org/situannotate#ImageCaptionAnnotationSituation">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/situannotate#ImageAnnotationSituation"/>
+        <rdfs:label>image caption annotation situation</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- https://w3id.org/situannotate#IndigenousAffiliation -->
 
     <owl:Class rdf:about="https://w3id.org/situannotate#IndigenousAffiliation">
@@ -1699,6 +1761,15 @@
 
     <owl:Class rdf:about="https://w3id.org/situannotate#ObjectAnnotation">
         <rdfs:subClassOf rdf:resource="https://w3id.org/situannotate#ImageAnnotation"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/situannotate#ObjectAnnotationSituation -->
+
+    <owl:Class rdf:about="https://w3id.org/situannotate#ObjectAnnotationSituation">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/situannotate#ImageAnnotationSituation"/>
+        <rdfs:label>object annotation situation</rdfs:label>
     </owl:Class>
     
 

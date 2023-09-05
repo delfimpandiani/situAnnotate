@@ -1134,7 +1134,7 @@ ontolex:LexicalEntry rdf:type owl:Class ;
 ###  https://w3id.org/situannotate#ImageAnnotationDescription
 :ImageAnnotationDescription rdf:type owl:Class ;
                             rdfs:subClassOf :AnnotationDescription ;
-                            rdfs:comment "A description of an image annotation, satisfied by a ImageAnnotationSituation." ;
+                            rdfs:comment "A description of an image annotation situation, satisfied by a ImageAnnotationSituation." ;
                             rdfs:label "Image Annotation Description" .
 
 

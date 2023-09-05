@@ -1,0 +1,2 @@
+This is a list of competency questions to evaluate the robustness and accuracy of the SituAnnotate ontology:
+
