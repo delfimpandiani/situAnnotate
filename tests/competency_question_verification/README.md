@@ -240,4 +240,3 @@ WHERE {
 
 ```
 
-#### SituAnnotate Competency Questions and Corresponding SPARQL Queries
