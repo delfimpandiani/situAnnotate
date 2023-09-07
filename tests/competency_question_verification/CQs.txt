@@ -1,2 +1,74 @@
 This is a list of competency questions to evaluate the robustness and accuracy of the SituAnnotate ontology:
 
+
+Contextual Precision and Situated Grounding:
+
+- Can the ontology effectively represent the contextual situation in which annotations take palce, connecting them to specific AnnotationSituations, including timing, location, and annotator details?
+- Can the ontology represent diverse annotation types and their roles within the annotation process through the use of AnnotationRoles?
+- Is it possible to retrieve multiple annotations of the same entity, enhancing the expressiveness of the ontology?
+- Does the ontology provide flexibility in representing annotators, including ArtificialAnnotators and HumanAnnotators, while addressing privacy concerns?
+Yes, the ontology allows for the representation of aggregate demographic data for HumanAnnotatorCommunities and associate them with affiliations for privacy protection.
+- Is it possible to compare different annotation situations related to the same annotated object through SPARQL queries, enabling the understanding of diverse annotation contexts and their implications?
+
+- Can automated reasoning tools, such as SPARQL queries, be used to navigate and analyze complex annotation contexts within the ontology?
+- Does the ontology remain accessible for human understanding despite its machine-readable nature?
+- Can the ontology be specialized for specific types of annotation situations, such as Image Annotation Situations (IAS)?
+- Does the ontology allow for modular specialization to include details specific to certain types of annotation situations, such as object detection being potentially connected to certain coordinates, or color annotations having rgb numbers as features?
+
+
+
+
+____
+
+Temporal and Spatial Queries:
+
+Which AnnotationSituations has a specific image been involved in that took place between the years 2020 and 2024?
+
+How many annotations for an image where created within a certain time range?
+
+where have annotation situations taken place? which country has had the most annotation situations take place in it?
+
+
+Annotation Situation Goals queries:
+
+what remuneration scheme, if any, did a specific annotation situation have in place?
+
+what dataset/s did an annotation situation involve?
+
+what types of entities have been annotated and are present in the KG?
+
+
+Annotator-Related Queries:
+
+Who was the annotator involved in the AnnotationSituation that assigned a specific meaning to a particular entity (e.g., image 1)?
+List all ArtificialAnnotators that have been used to annotate a specific image, along with their model architecture and the dataset they were pretrained on.
+Provide a count of how many times a model architecture has been used to annotate a specific image, and the annotation resulting from each of the times.
+Retrieve all ArtificialAnnotators that have been used to annotate all images from a certain dataset.
+
+
+Lexical Entry and Annotation Role Queries:
+
+Give me all the LexicalEntries that type annotations about a specific image. For each LexicalEntry, provide information about the AnnotationRoles of the annotations that were typed by them.
+Can you retrieve all AnnotationSituations in which involved Annotations play a specific AnnotationRole (e.g., "detected emotion")?
+find all images that are annotated with the lexical entry "chair", and include what type of annotation (what annotation role) that lexical entry was connected to.
+identify the context in which (annotator, place, time, remuneration scheme) a lexical entry was used to annotate an image.
+
+Comparative Queries:
+
+CQ10: Compare the AnnotationSituations of two or more entities (e.g., images) to identify any common annotators or AnnotationRoles.
+CQ11: Find all entities (e.g., images) that have been annotated with similar AnnotationRoles and list the annotators involved in those situations.
+Dataset-Related Queries:
+
+CQ12: List all images from a specific dataset that have been annotated, along with details of the AnnotationSituations.
+CQ13: Retrieve the total count of annotations made on each image within a particular dataset.
+CQ14: Identify all AnnotationSituations that involve annotations from a certain dataset.
+
+Annotation Strength Queries:
+
+CQ15: Can I retrieve all the object annotations from a specific AnnotationSituation that have an annotation strength higher than 97%?
+CQ16: Provide a list of AnnotationSituations in which annotations with strengths exceeding a specified threshold (e.g., 90%) have been made.
+Concept Typing Queries:
+
+CQ17: Give me all concepts that have been used to type annotations about a specific entity (e.g., an image). Include information about the frequency of each concept's use.
+CQ18: List all entities (e.g., images) that have been annotated with concepts related to a particular category (e.g., "animals" or "landscapes").
+CQ19: Retrieve the AnnotationSituations where annotations are typed with specific concepts, and provide details about the annotators involved.
