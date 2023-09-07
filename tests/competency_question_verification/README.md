@@ -163,7 +163,7 @@ WHERE {
 - CQ7: Which images have annotations classified under the role of "detected emotion" with an annotation strength exceeding 0.85, and what labels have been assigned to them?
 
 ```
-SELECT ?Image ?Annotation ?Label ?AnnotationStrength
+SELECT ?Image ?Label
 WHERE {
     ?Image a :Image .
     ?Annotation :aboutAnnotatedEntity ?Image ;
